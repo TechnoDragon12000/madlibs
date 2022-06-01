@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Mad Libs Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Covered By Your Grace">
+    <link rel="shortcut icon"  type='image/png' href="funny.png">
+</head>
+<body>
+    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <div id='content'>
+        <img src="funny.png" alt="icon" width='85px' height="85px">
+        <h1>Mad Libs Generator</h1>  
+        
+        <div id='grammer'>
+            <div id = 'adjective'>
+                <h4>Enter an adjective:</h3>
+                <input type="text" width=50 id='adjective_input' >
+            </div>
+            <div id = 'noun'>
+                <h4>Enter an noun:</h3>
+                <input type="text" width=50 id='noun_input' >  
+            </div>
+            <div id = 'verb'>
+                <h4>Enter a verb (PAST TENSE FORM):</h3>
+                <input type="text" width=50 id='verb_input' >
+            </div>
+        
+        </div>
+        <button id='submit_btn' onclick="get_MadLib()">GET MAD LIB!</button>
+        <div id='madlib'>
+            <h3 id='answer'>Your Mad Lib Is: </h3>
+            <h3 id='result'></h3>
+        </div>
+
+    </div>
+    <script>
+        let adj = document.getElementById('adjective_input'); // idiotic 
+        let noun = document.getElementById('noun_input'); // boy
+        let verb = document.getElementById('verb_input'); // jumped
+
+        let btn = document.getElementById('submit_btn');
+
+        let result = document.getElementById('result');
+
+        let endings = [' in the toilet!', ' to the dancing goat!', ' to the idiotic donkey!',
+        ' on the lazy brown dog!', ' on the teacher!', ' on the angry cat!', ' to the hungry lion!', ' on the singing elephant!'];
+
+        function get_MadLib(){
+            if (verb.value && adj.value && noun.value != ''){
+                function random(min, max) {
+                    let num1 = max - min + 1;
+                    let num2 = Math.random() * num1;
+                    let ans = Math.floor(num2) + min;
+                    return ans; 
+                };
+                let index = random(0, endings.length-1);
+                let end_value = endings[index];
+
+                let value =  ' The ' + adj.value.toLowerCase() + ' ' + noun.value.toLowerCase() + ' ' + verb.value.toLowerCase() + end_value;
+                adj.value = ''
+                noun.value = ''
+                verb.value = ''
+                result.innerHTML = value;
+                responsiveVoice.speak(value);
+            }    
+            else {
+                alert('Enter an ADJECTIVE, a NOUN and a VERB!')
+            }
+        };
+    </script>
+</body>
+</html>

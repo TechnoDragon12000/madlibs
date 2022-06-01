@@ -1,0 +1,104 @@
+body {
+  background-color: royalblue;
+}
+
+#content {
+  border: 10px solid violet;
+  height: 94vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  color: yellow;
+  font-family: 'Covered By Your Grace', cursive;
+  font-weight: bolder;
+  border: 5px solid plum;
+  letter-spacing: 1.3px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 55px;
+}
+
+input {
+  font-size: 25px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 2.8px;
+  padding-right: 3.5px;
+  padding-left: 3.5px;
+  margin: 7.8px;
+}
+
+#adjective_input {
+  background-color: aqua;
+  color: blue;
+  border: 3.5px solid blue;
+}
+
+#noun_input {
+  background-color: fuchsia;
+  color: aqua;
+  border: 3.5px solid aqua;
+}
+
+#verb_input {
+  background-color: aqua;
+  color: darkmagenta;
+  border: 3.5px solid darkmagenta;
+}
+
+#grammer {
+  display: flex;
+  background-color: crimson;
+  padding: 8px;
+  border-radius: 40px;
+}
+
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  text-align: center;
+}
+
+button {
+  font-size: 27px;
+  font-family: fantasy;
+  border-width: 0ch;
+  padding: 10px;
+  background-color: mediumorchid;
+  color: black;
+  border: 3.5px solid white;
+  margin: 7.8px;
+  margin-top: 25px;
+}
+
+button:hover {
+  transition: 00.1s;
+  text-decoration: underline;
+  background-color: blue;
+  color: white;
+}
+
+#madlib {
+  display: flex;
+  flex-direction: row;
+}
+
+#answer {
+  font-family: cursive;
+  font-size: 27px;
+  color: darkblue;
+  padding: 4.2px;
+}
+
+#result {
+  font-family: cursive;
+  color: yellow;
+  font-size: 27px;
+  text-decoration: underline;
+  padding: 4.2px;
+}
